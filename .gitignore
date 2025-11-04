@@ -1,7 +1,20 @@
-.env
-app.db
+# Python
 __pycache__/
 *.pyc
-.vscode/
+*.pyo
+*.pyd
+.env
 .venv/
-env/
+venv/
+
+# SQLite DB
+app.db
+
+# Uploaded files
+storage/uploads/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
