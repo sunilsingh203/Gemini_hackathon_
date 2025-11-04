@@ -1,8 +1,6 @@
 import uuid
-from sqlalchemy import Column, String, Integer, DateTime, Text, JSON, Boolean, ForeignKey
-from sqlalchemy.dialects.sqlite import BLOB
+from sqlalchemy import Column, String, Integer, DateTime, Text, JSON
 from sqlalchemy.sql import func
-from sqlalchemy.orm import relationship
 from app.db.base import Base
 
 class Resume(Base):
@@ -21,7 +19,4 @@ class Resume(Base):
     raw_text = Column(Text, nullable=True)
     structured_data = Column(JSON, nullable=True)
     ai_enhancements = Column(JSON, nullable=True)
-    metadata = Column(JSON, nullable=True)
-
-    # Relationships (we’ll create tables later; keeping simple for Step 1)
-    # person_info = relationship("PersonInfo", back_populates="resume", cascade="all, delete-orphan")
+    meta = Column(JSON, nullable=True)  # <-- renamed from 'metadata'
